@@ -32,7 +32,8 @@
       "store": ["./src/store"],
       "core": ["./src/core"],
       "assets": ["./src/asset"],
-      "services": ["./src/services"]
+      "services": ["./src/services"],
+      "config": ["./src/config"],
     }
   },
   "include": [
