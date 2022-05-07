@@ -1,6 +1,7 @@
 import {createEntityAdapter, createSlice} from '@reduxjs/toolkit';
 
 import {Car} from 'core/Entities/Car/types';
+import {fetchCars} from './asyncActions';
 
 export type PageState = {
     cars: Car[];
@@ -17,10 +18,14 @@ const carListSlice = createSlice({
     initialState: carListAdapter.getInitialState(catListPageState),
     reducers: {},
     extraReducers: (builder) => {
-        console.warn('builder');
+        builder.addCase(fetchCars.fulfilled, (state, action) => {
+            carListAdapter.upsertMany(state, action.payload);
+        });
     },
 });
 
-export const {selectAll: selectAllStudentsState, selectById: selectedStudentByIdState} = carListAdapter.getSelectors();
+export const {selectAll: selectAllCarsState, selectById: selectedCarByIdState} = carListAdapter.getSelectors();
+
+export {fetchCars};
 
 export default carListSlice.reducer;

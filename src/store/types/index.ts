@@ -1,5 +1,7 @@
 import rootReducer from 'store/slices';
 
-type AppState = ReturnType<typeof rootReducer>;
+import {store} from '../index';
 
-export default AppState;
+export type AppState = ReturnType<typeof rootReducer>;
+
+export type AppDispatch = typeof store.dispatch;

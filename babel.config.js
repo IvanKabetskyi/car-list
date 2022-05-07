@@ -23,7 +23,6 @@ module.exports = function (api) {
                         components: path.resolve(__dirname, 'src/components'),
                         router: path.resolve(__dirname, 'src/router'),
                         pages: path.resolve(__dirname, 'src/pages'),
-                        assets: path.resolve(__dirname, 'src/assets'),
                         constants: path.resolve(__dirname, 'src/constants'),
                         store: path.resolve(__dirname, 'src/store'),
                         core: path.resolve(__dirname, 'src/core'),
