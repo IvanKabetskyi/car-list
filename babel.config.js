@@ -29,6 +29,7 @@ module.exports = function (api) {
                         core: path.resolve(__dirname, 'src/core'),
                         services: path.resolve(__dirname, 'src/services'),
                         widgets: path.resolve(__dirname, 'src/widgets'),
+                        config: path.resolve(__dirname, 'src/config'),
                     },
                 },
             ],
