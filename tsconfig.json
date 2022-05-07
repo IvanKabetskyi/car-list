@@ -23,10 +23,20 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "components": ["./src/components"],
+      "router": ["./src/router"],
+      "pages": ["./src/pages"],
+      "constants": ["./src/constants"],
+      "store": ["./src/store"],
+      "core": ["./src/core"],
+      "assets": ["./src/asset"],
+      "services": ["./src/services"]
+    }
   },
   "include": [
     "src"
   ],
-  "extends": "expo/tsconfig.base"
+  "extends": "expo/tsconfig.base",
 }
