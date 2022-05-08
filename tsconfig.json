@@ -33,6 +33,9 @@
       "core": ["./src/core"],
       "services": ["./src/services"],
       "config": ["./src/config"],
+      "utils": ["./src/utils"],
+      "hooks": ["./src/hooks"],
+      "types": ["./src/types"],
     }
   },
   "include": [

@@ -1,11 +1,12 @@
 import {combineReducers} from 'redux';
 
 import carListReducer from 'pages/CarList/redux';
-import carViewReducer from 'pages/CarView/redux';
+
+import filterReducer from './Filter';
 
 const appReducer = combineReducers({
     carListReducer,
-    carViewReducer,
+    filterReducer,
 });
 
 const rootReducer = (state: any, action: any): ReturnType<typeof appReducer> => {
