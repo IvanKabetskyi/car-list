@@ -12,7 +12,7 @@ const CarCard: React.FC<{car: Car}> = ({car}) => {
             <Card.Cover source={{uri: 'https://picsum.photos/200'}} />
             <Card.Content>
                 <MainInfo car={car} />
-                <ListItem label="Year" value={car.modelYear} />
+                <ListItem label="Year Model" value={car.modelYear} />
                 <ListItem label="VIN" value={car.vin} />
                 <ListItem label="Color" value={car.color} />
             </Card.Content>

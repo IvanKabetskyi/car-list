@@ -9,7 +9,7 @@ import CarList from 'pages/CarList';
 
 import FilterDrawer from 'widgets/FilterDrawer';
 
-import ListNavigationBar from 'components/ListNavigationBar';
+import ListNavigationBar from 'components/common/ListNavigationBar';
 
 const Drawer = createDrawerNavigator();
 

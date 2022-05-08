@@ -5,12 +5,12 @@ import {useIsFocused} from '@react-navigation/native';
 import {Car} from 'core/Entities/Car/types';
 
 import useCarListActions from './hooks/useCarListActions';
-import useStateCars from './hooks/useStateCars';
+import useFilterCars from './hooks/useFilterCars';
 
 import CarCard from './components/CarCard';
 
 const CarList: React.FC = () => {
-    const cars = useStateCars();
+    const cars = useFilterCars();
     const {fetchCars} = useCarListActions();
     const isFocused = useIsFocused();
 

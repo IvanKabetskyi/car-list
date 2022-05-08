@@ -1,0 +1,47 @@
+[
+  {
+    "id":1,
+    "make":"Mitsubishi",
+    "model":"Montero",
+    "color":"Yellow",
+    "modelYear":2002,
+    "vin":"SAJWJ0FF3F8321657",
+    "price":281
+  },
+  {
+    "id":2,
+    "make":"Volkswagen",
+    "model":"Passat",
+    "color":"Maroon",
+    "modelYear":2008,
+    "vin":"WBANV9C51AC203320",
+    "price":173
+  },
+  {
+    "id":3,
+    "make":"Saturn",
+    "model":"L-Series",
+    "color":"Red",
+    "modelYear":2003,
+    "vin":"1HGCR6F34EA246317",
+    "price":223
+  },
+  {
+    "id":4,
+    "make":"Jeep",
+    "model":"Compass",
+    "color":"Violet",
+    "modelYear":2012,
+    "vin":"4USBT33454L511606",
+    "price":273
+  },
+  {
+    "id":5,
+    "make":"Mitsubishi",
+    "model":"Lancer Evolution",
+    "color":"Purple",
+    "modelYear":2002,
+    "vin":"WAU2GBFCXDN339713",
+    "price":384
+  }
+]
