@@ -7,10 +7,10 @@ import useStateFilterParams from 'hooks/useStateFilterParams';
 
 import {filterCars} from '../utils';
 
-import useStateCars from './useStateCars';
+import useStateCarList from './useStateCarList';
 
 export default function (): Car[] {
-    const cars = useStateCars();
+    const {cars} = useStateCarList();
     const filterParams = useStateFilterParams();
 
     return useMemo((): Car[] => {

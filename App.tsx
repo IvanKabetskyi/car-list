@@ -6,9 +6,9 @@ import {PersistGate} from 'redux-persist/integration/react';
 
 import 'react-native-gesture-handler';
 
-import {persistedStore, store} from './store';
+import {persistedStore, store} from './src/store';
 
-import Router from './router';
+import Router from './src/router';
 
 const styles = StyleSheet.create({
     wrapper: {

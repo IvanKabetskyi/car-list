@@ -3,7 +3,7 @@ import {Paragraph} from 'react-native-paper';
 
 interface OwnProps {
     label: string;
-    value: string | number;
+    value?: string | number;
 }
 
 const ListItem: React.FC<OwnProps> = (props) => {

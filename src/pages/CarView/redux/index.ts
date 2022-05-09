@@ -8,9 +8,12 @@ import {fetchCar} from './asyncActions';
 export type PageState = {
     car?: Car;
     carAdditionalInfo?: CarAdditionalInfo;
+    isLoading: boolean;
 };
 
-const catViewPageState: PageState = {};
+const catViewPageState: PageState = {
+    isLoading: false,
+};
 
 const carViewSlice = createSlice({
     name: 'carViewPage',
@@ -19,6 +22,7 @@ const carViewSlice = createSlice({
         resetState: (state) => {
             state.car = undefined;
             state.carAdditionalInfo = undefined;
+            state.isLoading = true;
         },
     },
     extraReducers: (builder) => {
@@ -27,6 +31,13 @@ const carViewSlice = createSlice({
 
             state.car = car;
             state.carAdditionalInfo = carAdditionalInfo;
+            state.isLoading = false;
+        });
+        builder.addCase(fetchCar.pending, (state) => {
+            state.isLoading = true;
+        });
+        builder.addCase(fetchCar.rejected, (state) => {
+            state.isLoading = false;
         });
     },
 });
