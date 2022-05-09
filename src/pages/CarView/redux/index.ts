@@ -22,6 +22,7 @@ const carViewSlice = createSlice({
         resetState: (state) => {
             state.car = undefined;
             state.carAdditionalInfo = undefined;
+            state.isLoading = true;
         },
     },
     extraReducers: (builder) => {

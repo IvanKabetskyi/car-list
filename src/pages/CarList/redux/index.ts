@@ -27,7 +27,7 @@ const carListSlice = createSlice({
         builder.addCase(fetchCars.pending, (state) => {
             state.isLoading = true;
         });
-        builder.addCase(fetchCars.fulfilled, (state) => {
+        builder.addCase(fetchCars.rejected, (state) => {
             state.isLoading = false;
         });
     },

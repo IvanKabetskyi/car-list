@@ -23,12 +23,12 @@ const CarView: React.FC = () => {
         resetState();
     }, [isFocused]);
 
-    if (!isLoading) {
+    if (isLoading) {
         return <ActivityIndicator style={styles.wrapper} animating={true} color={Colors.red800} />;
     }
 
     if (!car) {
-        return <Title>Something went wrong! Please try open this scene again</Title>;
+        return <Title style={styles.wrapper}>{`Something went wrong!\nPlease try open this scene again`}</Title>;
     }
 
     return (
