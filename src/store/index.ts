@@ -20,9 +20,9 @@ const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) => {
         if (process.env.NODE_ENV === `development`) {
-            return getDefaultMiddleware(createLogger({collapsed: true}));
+            return getDefaultMiddleware({serializableCheck: false, ...createLogger({collapsed: true})});
         }
-        return getDefaultMiddleware();
+        return getDefaultMiddleware({serializableCheck: false});
     },
 });
 

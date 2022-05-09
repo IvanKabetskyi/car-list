@@ -15,7 +15,9 @@ const CarList: React.FC = () => {
     const isFocused = useIsFocused();
 
     useEffect(() => {
-        fetchCars();
+        if (isFocused) {
+            fetchCars();
+        }
     }, [isFocused]);
     return (
         <FlatList data={cars} renderItem={({item}: ListRenderItemInfo<Car>) => <CarCard car={item} key={item.id} />} />

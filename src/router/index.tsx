@@ -6,10 +6,12 @@ import {StyleSheet} from 'react-native';
 import {routes} from 'constants/index';
 
 import CarList from 'pages/CarList';
+import CarView from 'pages/CarView';
 
 import FilterDrawer from 'widgets/FilterDrawer';
 
 import ListNavigationBar from 'components/common/ListNavigationBar';
+import ViewNavigationBar from 'components/common/ViewNavigationBar';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,6 +20,11 @@ const styles = StyleSheet.create({
         width: '100%',
     },
 });
+
+const viewNavigationBarOptions = {
+    header: ViewNavigationBar,
+    gestureEnabled: false,
+};
 
 const Router: React.FC = () => {
     return (
@@ -37,6 +44,7 @@ const Router: React.FC = () => {
                     name={routes.carList}
                     component={CarList}
                 />
+                <Drawer.Screen options={viewNavigationBarOptions} name={routes.carView} component={CarView} />
             </Drawer.Navigator>
         </NavigationContainer>
     );
