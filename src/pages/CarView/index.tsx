@@ -12,7 +12,7 @@ import styles from './styles';
 const CarView: React.FC = () => {
     const isFocused = useIsFocused();
     const {resetState, fetchCar} = useCarViewActions();
-    const {car, carAdditionalInfo} = useStateCarView();
+    const {car, carAdditionalInfo, isLoading} = useStateCarView();
 
     useEffect(() => {
         if (isFocused) {
@@ -23,8 +23,12 @@ const CarView: React.FC = () => {
         resetState();
     }, [isFocused]);
 
-    if (!car || !carAdditionalInfo) {
+    if (!isLoading) {
         return <ActivityIndicator style={styles.wrapper} animating={true} color={Colors.red800} />;
+    }
+
+    if (!car) {
+        return <Title>Something went wrong! Please try open this scene again</Title>;
     }
 
     return (
@@ -35,16 +39,16 @@ const CarView: React.FC = () => {
                 <Title>
                     {car.make}, <Paragraph>{car.model}</Paragraph>
                 </Title>
-                <ListItem label="Make ID" value={carAdditionalInfo.MakeID} />
+                <ListItem label="Make ID" value={carAdditionalInfo?.MakeID} />
 
                 <ListItem label="Year Model" value={car.modelYear} />
                 <ListItem label="VIN" value={car.vin} />
                 <ListItem label="Color" value={car.color} />
-                <ListItem label="Manufacturer" value={carAdditionalInfo.Manufacturer} />
-                <ListItem label="City of manufacture" value={carAdditionalInfo.PlantCity} />
-                <ListItem label="Country of Origin" value={carAdditionalInfo.PlantCountry} />
-                <ListItem label="State of production" value={carAdditionalInfo.PlantState} />
-                <ListItem label="Vehicle Type" value={carAdditionalInfo.VehicleType} />
+                <ListItem label="Manufacturer" value={carAdditionalInfo?.Manufacturer} />
+                <ListItem label="City of manufacture" value={carAdditionalInfo?.PlantCity} />
+                <ListItem label="Country of Origin" value={carAdditionalInfo?.PlantCountry} />
+                <ListItem label="State of production" value={carAdditionalInfo?.PlantState} />
+                <ListItem label="Vehicle Type" value={carAdditionalInfo?.VehicleType} />
             </Card.Content>
         </Card>
     );

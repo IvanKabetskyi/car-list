@@ -5,10 +5,12 @@ import {fetchCars} from './asyncActions';
 
 export type PageState = {
     cars: Car[];
+    isLoading: boolean;
 };
 
 const catListPageState: PageState = {
     cars: [],
+    isLoading: false,
 };
 
 const carListAdapter = createEntityAdapter<Car>();
@@ -20,6 +22,13 @@ const carListSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchCars.fulfilled, (state, action) => {
             carListAdapter.upsertMany(state, action.payload);
+            state.isLoading = false;
+        });
+        builder.addCase(fetchCars.pending, (state) => {
+            state.isLoading = true;
+        });
+        builder.addCase(fetchCars.fulfilled, (state) => {
+            state.isLoading = false;
         });
     },
 });

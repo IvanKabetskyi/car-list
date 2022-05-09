@@ -1,12 +1,11 @@
 import {useSelector} from 'react-redux';
 
-import {getCar, getCarAdditionalInfo, getIsLoading} from '../redux/selectors';
+import {getCars, getIsLoading} from '../redux/selectors';
 import {PageState} from '../redux';
 
 export default function (): PageState {
     return {
-        car: useSelector(getCar),
-        carAdditionalInfo: useSelector(getCarAdditionalInfo),
+        cars: useSelector(getCars),
         isLoading: useSelector(getIsLoading),
     };
 }

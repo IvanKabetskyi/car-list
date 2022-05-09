@@ -6,3 +6,5 @@ import {AppState} from 'store/types';
 export const getCar = (state: AppState): Car | undefined => state.carViewReducer.car;
 export const getCarAdditionalInfo = (state: AppState): CarAdditionalInfo | undefined =>
     state.carViewReducer.carAdditionalInfo;
+
+export const getIsLoading = (state: AppState): boolean => state.carViewReducer.isLoading;
