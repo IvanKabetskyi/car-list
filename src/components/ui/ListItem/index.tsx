@@ -9,6 +9,10 @@ interface OwnProps {
 const ListItem: React.FC<OwnProps> = (props) => {
     const {label, value} = props;
 
+    if (!value) {
+        return null;
+    }
+
     return (
         <Paragraph>
             {label}: {value}
